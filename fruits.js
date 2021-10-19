@@ -15,6 +15,7 @@ function draw(){
     image(img,0,0,640,420);
 
     if(status != ""){
+        console.log("here");
         for(i = 0; i < objects.length; i++){
             document.getElementById("status").innerHTML = "Status : Object Detected";
 
@@ -33,7 +34,7 @@ function modelLoaded(){
     status = true;
     objectDetector.detect(img, gotResult);
 }
-function gotResult(){
+function gotResult(error, results){
     if(error){
         console.log(error);
     }
